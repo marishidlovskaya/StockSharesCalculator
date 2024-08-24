@@ -1,7 +1,6 @@
 ﻿using StockSharesCalculator.Application.Interfaces;
 using StockSharesCalculator.Environment.Entities;
 using StockSharesCalculator.Environment.Interfaces;
-using System.Collections.Generic;
 
 namespace StockSharesCalculator.Application.Services;
 

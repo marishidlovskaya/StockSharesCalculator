@@ -3,20 +3,21 @@ using StockSharesCalculator.Application;
 using StockSharesCalculator.Application.Interfaces;
 using StockSharesCalculator.Environment.Entities;
 using StockSharesCalculator.Models;
+using StockSharesCalculator.Web.Interfaces;
 using StockSharesCalculator.Web.Models;
 
 namespace StockSharesCalculator.Controllers;
 public class StockSharesController : Controller
 {
     private readonly IStockTransactionsService _stockTransactionsService;
-    private readonly IStockCalculationService _stockCalculationService;
+    private readonly IStockCalculationServiceFactory _stockCalculationServiceFactory;
 
     public StockSharesController(
         IStockTransactionsService stockTransactionsService,
-        IStockCalculationService stockCalculationService)
+        IStockCalculationServiceFactory stockCalculationServiceFactory)
     {
         _stockTransactionsService = stockTransactionsService;
-        _stockCalculationService = stockCalculationService;
+        _stockCalculationServiceFactory = stockCalculationServiceFactory;
     }
 
     public IActionResult Index()
@@ -36,8 +37,9 @@ public class StockSharesController : Controller
         {
             IEnumerable<StockTransaction> transactions = await _stockTransactionsService.GetAllStockTransactionsAsync();
 
-            CalculationResult result = _stockCalculationService.CalculateResult(
-                transactions, model.NumberOfShares, model.PricePerShare);
+            IStockCalculationService stockCalculationService = _stockCalculationServiceFactory.GetCalculatorService(model.CalculationStrategy);
+
+            CalculationResult result = stockCalculationService.CalculateResult(transactions, model.NumberOfShares, model.PricePerShare);
 
             CalculationResultViewModel resultModel = new()
             {

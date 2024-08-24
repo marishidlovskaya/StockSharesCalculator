@@ -21,6 +21,7 @@
             <input asp-for="PricePerShare" type="number" class="form-control" />
             <span asp-validation-for="PricePerShare"  class="text-danger"></span>
         </div>
+        <input asp-for="CalculationStrategy" value="0" hidden/>
         <button type="submit" class="btn btn-primary">Calculate</button>
     </form>
 
@@ -50,7 +51,7 @@
                             $('#calcResult').html(response);
                         },
                         error: function () {
-                            alert('An error occurred while calculating the profit.');
+                            alert('An error occurred while calculating');
                         }
                     });
                 });

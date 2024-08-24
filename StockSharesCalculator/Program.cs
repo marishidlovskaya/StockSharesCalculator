@@ -2,17 +2,17 @@ using StockSharesCalculator.Environment.Repositories;
 using StockSharesCalculator.Environment.Interfaces;
 using StockSharesCalculator.Application.Interfaces;
 using StockSharesCalculator.Application.Services;
+using StockSharesCalculator.Web.Interfaces;
+using StockSharesCalculator.Web.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// Register in-memory repository and services
 builder.Services.AddSingleton<IStockTransactionRepository, StockTransactionRepository>();
 builder.Services.AddScoped<IStockTransactionsService, StockTransactionsService>();
-builder.Services.AddScoped<IStockCalculationService, StockCalculationFIFOService>();
-
+builder.Services.AddScoped<IStockCalculationServiceFactory, StockCalculationServiceFactory>();
 
 var app = builder.Build();
 

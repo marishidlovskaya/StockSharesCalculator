@@ -53,9 +53,7 @@ public class StockCalculationFIFOService : IStockCalculationService
         }
 
         if (remainingShares > 0)
-            throw new InvalidOperationException(isSoldTransaction
-                ? "Not enough shares to sell."
-                : "Remaining shares calculation error.");
+            throw new InvalidOperationException("Cost basis calculation error.");
 
         return totalCostBasis / sharesToCalculate;
     }

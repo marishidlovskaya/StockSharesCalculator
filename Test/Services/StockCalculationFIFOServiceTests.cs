@@ -3,7 +3,7 @@ using StockSharesCalculator.Environment.Entities;
 using StockSharesCalculator.Environment.Repositories;
 using StockSharesCalculator.Test.TestData;
 
-namespace Test;
+namespace StockSharesCalculator.Test.Services;
 public class StockCalculationFIFOServiceTests
 {
     [Theory]

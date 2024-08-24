@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34601.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockSharesCalculator.Web", "StockSharesCalculator\StockSharesCalculator.Web.csproj", "{8D60593E-E74E-4AEB-A54B-50357E0A31A3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{694431A0-188D-468A-938A-ACF80C7B8645} = {694431A0-188D-468A-938A-ACF80C7B8645}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockSharesCalculator.Application", "StockSharesCalculator.Application\StockSharesCalculator.Application.csproj", "{694431A0-188D-468A-938A-ACF80C7B8645}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9EDBD69C-BCAE-4BE7-934A-FFB2976DEF29} = {9EDBD69C-BCAE-4BE7-934A-FFB2976DEF29}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockSharesCalculator.Environment", "StockSharesCalculator.Environment\StockSharesCalculator.Environment.csproj", "{9EDBD69C-BCAE-4BE7-934A-FFB2976DEF29}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockSharesCalculator.Test", "Test\StockSharesCalculator.Test.csproj", "{6EB8C204-EEF9-4D70-9736-AA946932DA5E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{694431A0-188D-468A-938A-ACF80C7B8645} = {694431A0-188D-468A-938A-ACF80C7B8645}
+		{8D60593E-E74E-4AEB-A54B-50357E0A31A3} = {8D60593E-E74E-4AEB-A54B-50357E0A31A3}
+		{9EDBD69C-BCAE-4BE7-934A-FFB2976DEF29} = {9EDBD69C-BCAE-4BE7-934A-FFB2976DEF29}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8D60593E-E74E-4AEB-A54B-50357E0A31A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D60593E-E74E-4AEB-A54B-50357E0A31A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D60593E-E74E-4AEB-A54B-50357E0A31A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D60593E-E74E-4AEB-A54B-50357E0A31A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{694431A0-188D-468A-938A-ACF80C7B8645}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{694431A0-188D-468A-938A-ACF80C7B8645}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{694431A0-188D-468A-938A-ACF80C7B8645}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{694431A0-188D-468A-938A-ACF80C7B8645}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EDBD69C-BCAE-4BE7-934A-FFB2976DEF29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EDBD69C-BCAE-4BE7-934A-FFB2976DEF29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EDBD69C-BCAE-4BE7-934A-FFB2976DEF29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EDBD69C-BCAE-4BE7-934A-FFB2976DEF29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EB8C204-EEF9-4D70-9736-AA946932DA5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EB8C204-EEF9-4D70-9736-AA946932DA5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EB8C204-EEF9-4D70-9736-AA946932DA5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EB8C204-EEF9-4D70-9736-AA946932DA5E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BE734476-A91A-4EBE-9D3B-CA6701DEAAB0}
+	EndGlobalSection
+EndGlobal

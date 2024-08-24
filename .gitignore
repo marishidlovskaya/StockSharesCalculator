@@ -1,0 +1,141 @@
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Auto-generated files
+Generated_Code/
+
+# Log files
+*.log
+*.tlg
+*.ide.log
+*.ide.api.json
+
+# Azure Pipelines
+.vs/
+.vscode/
+.vsconfig
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+.vscode/extensions.json
+.vscode/*.code-workspace
+
+# Local history for Visual Studio
+.localhistory
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Mac System files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+*.swp
+*.swo
+.AppleDouble
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# JetBrains Rider
+.idea/
+
+# Rider settings
+*.sln.iml
+
+# Rider project files
+.idea/*.sln*
+.idea/workspace.xml
+
+# Rider file-based project model
+.idea/.idea_modules.xml
+.idea/.idea_ws.xml
+
+# Rider git project files
+.idea/.git/
+
+# Rider project-based run configurations
+.idea/runConfigurations/
+.idea/RunConfigurations/
+
+# Rider .NET tools cache
+.idea/.cache/
+.idea/.idea_WsLocalResources
+.idea/.idea_VCS.xml
+
+# Rider Index
+.idea/.idea_idx.xml
+.idea/.idea_JIRA.xml
+.idea/.idea_IssueNavigation.xml
+.idea/.idea_ws.*
+
+# JetBrains ReSharper
+_ReSharper.Caches/
+
+# Rider logs
+.idea/*.log
+
+# Windows crash dump files
+*.stackdump
+*.dmp
+
+# Visual Studio 2019
+.vs/
+.vscode/
+*.vs/
+
+# Mono Auto Generated Files
+mono_crash.*
+mono_crash_reporter_*.log
+
+# Exclude build directories
+bin/
+obj/
+publish/
+AppPackages/
+.vs/
+
+# User-specific directories
+*.userprefs
+.idea/
+.vscode/
+*.csproj.user
+
+# Rider settings
+.idea/
+.idea/dotnettools/
+.idea/vcs.xml
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Publish output
+publish/
+
+# End of .gitignore

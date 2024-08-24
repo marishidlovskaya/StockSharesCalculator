@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Page</title>
+    <link rel="stylesheet" href="css/result.css">
+</head>
+<body>
+    @model StockSharesCalculator.Web.Models.CalculationResultViewModel
+
+    <div>
+        <h4>Calculation Result</h4>
+        <ul>
+            <li><strong>Remaining Shares:</strong> @Model.RemainingShares</li>
+            <li><strong>Cost Basis of Sold Shares:</strong> @Model.CostBasisOfSoldShares.ToString("C")</li>
+            <li><strong>Cost Basis of Remaining Shares:</strong> @Model.CostBasisOfRemainingShares.ToString("C")</li>
+            <li>
+                <strong>Total Profit:</strong>
+                <span style="color: @(Model.Profit < 0 ? "red" : "black");">
+                    @(Model.Profit < 0 ? "-" : "")@Math.Abs(Model.Profit).ToString("C")
+                </span>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
+
+
+
+
+

@@ -5,11 +5,11 @@ using StockSharesCalculator.Environment.Interfaces;
 
 namespace StockSharesCalculator.Environment.Repositories
 {
-    public class InMemoryStockTransactionRepository : IStockTransactionRepository
+    public class StockTransactionRepository : IStockTransactionRepository
     {
         private readonly List<StockTransaction> _transactions;
 
-        public InMemoryStockTransactionRepository()
+        public StockTransactionRepository()
         {
             // Initialize with sample data
             _transactions = [

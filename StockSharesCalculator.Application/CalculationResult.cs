@@ -1,6 +1,6 @@
 ﻿namespace StockSharesCalculator.Application;
 
-public class CalculationResultFIFO
+public class CalculationResult
 {
     public decimal RemainingShares { get; set; }
     public decimal CostBasisOfSoldShares { get; set; }

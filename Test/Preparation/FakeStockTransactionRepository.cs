@@ -3,21 +3,22 @@ using StockSharesCalculator.Environment.Interfaces;
 
 namespace StockSharesCalculator.Environment.Repositories;
 
-public class InMemoryFakeStockTransactionRepository : IStockTransactionRepository
+public class FakeStockTransactionRepository : IStockTransactionRepository
 {
     private readonly List<StockTransaction> _transactions;
 
-    public InMemoryFakeStockTransactionRepository(List<StockTransaction> transactions)
+    public FakeStockTransactionRepository(List<StockTransaction> transactions)
     {
         _transactions = transactions;
     }
     public async Task<IEnumerable<StockTransaction>> GetAll()
     {
-        return _transactions;
+        // Simulate asynchronous fake data fetching
+        return await Task.FromResult(_transactions);
     }
-
     public async Task<IEnumerable<StockTransaction>> Find(Func<StockTransaction, bool> predicate)
     {
-        return _transactions.Where(predicate);
+        // Simulate asynchronous fake data fetching
+        return await Task.FromResult(_transactions.Where(predicate));
     }
 }

@@ -4,14 +4,14 @@ using StockSharesCalculator.Environment.Enums;
 
 namespace StockSharesCalculator.Application.Services;
 
-public class StockCalculationServiceFIFO : IStockCalculationServiceFIFO
+public class StockCalculationFIFOService : IStockCalculationService
 {
-    public CalculationResultFIFO CalculateResult(IEnumerable<StockTransaction> transactions, decimal soldShares, decimal salePrice)
+    public CalculationResult CalculateResult(IEnumerable<StockTransaction> transactions, decimal soldShares, decimal salePrice)
     {
         if (!transactions.Any())
             throw new InvalidOperationException("No transactions found");
 
-        decimal totalShares = GetTotalShares(transactions);
+        decimal totalShares = IStockCalculationService.GetTotalShares(transactions);
         if (soldShares > totalShares)
             throw new InvalidOperationException($"The number of shares sold ({soldShares}) exceeds the available shares ({totalShares})");
 
@@ -20,23 +20,13 @@ public class StockCalculationServiceFIFO : IStockCalculationServiceFIFO
         decimal costBasisOfRemainingShares = CalculateCostBasis(transactions, remainingShares, isSoldTransaction: false);
         decimal profit = CalculateTotalProfitOrLoss(costBasisOfSoldShares, soldShares, salePrice);
 
-        return new CalculationResultFIFO
+        return new CalculationResult
         {
             RemainingShares = Math.Round(remainingShares, 2, MidpointRounding.AwayFromZero),
             CostBasisOfSoldShares = Math.Round(costBasisOfSoldShares, 2, MidpointRounding.AwayFromZero),
             CostBasisOfRemainingShares = Math.Round(costBasisOfRemainingShares, 2, MidpointRounding.AwayFromZero),
             Profit = Math.Round(profit, 2, MidpointRounding.AwayFromZero)
         };
-    }
-
-    private decimal GetTotalShares(IEnumerable<StockTransaction> transactions)
-    {
-        return transactions
-            .Where(t => t.TransactionType == TransactionType.Buy)
-            .Sum(t => t.NumberOfShares) -
-            transactions
-            .Where(t => t.TransactionType == TransactionType.Sell)
-            .Sum(t => t.NumberOfShares);
     }
 
     private decimal CalculateCostBasis(IEnumerable<StockTransaction> transactions, decimal sharesToCalculate, bool isSoldTransaction)

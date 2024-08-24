@@ -8,18 +8,18 @@
 </head>
 <body>
 
-    @model StockSharesCalculator.Web.Models.ShareSaleViewModel
+    @model StockSharesCalculator.Web.Models.InputStockSaleViewModel
 
     <form id="inputForm" asp-action="CalculateResult" method="post">
         <div class="form-group">
             <label asp-for="NumberOfShares"></label>
-            <input asp-for="NumberOfShares" class="form-control" />
+            <input asp-for="NumberOfShares" type="number" class="form-control" />
             <span asp-validation-for="NumberOfShares" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="PricePerShare"></label>
-            <input asp-for="PricePerShare" class="form-control" />
-            <span asp-validation-for="PricePerShare" class="text-danger"></span>
+            <input asp-for="PricePerShare" type="number" class="form-control" />
+            <span asp-validation-for="PricePerShare"  class="text-danger"></span>
         </div>
         <button type="submit" class="btn btn-primary">Calculate</button>
     </form>

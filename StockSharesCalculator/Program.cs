@@ -9,9 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 // Register in-memory repository and services
-builder.Services.AddSingleton<IStockTransactionRepository, InMemoryStockTransactionRepository>();
+builder.Services.AddSingleton<IStockTransactionRepository, StockTransactionRepository>();
 builder.Services.AddScoped<IStockTransactionsService, StockTransactionsService>();
-builder.Services.AddScoped<IStockCalculationServiceFIFO, StockCalculationServiceFIFO>();
+builder.Services.AddScoped<IStockCalculationService, StockCalculationFIFOService>();
 
 
 var app = builder.Build();
